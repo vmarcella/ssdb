@@ -1,8 +1,7 @@
 const sheetAPI = require('./lib/sheet');
-const auth = require('./lib/auth');
 
-const connect = (config) => {
-  sheetAPI
+const connect = async (config) => {
+  await sheetAPI
     .setup(config.credentialsPath, config.tokenPath)
     .then(() => {
       console.log("Successfully authenticated with google's servers");
@@ -23,4 +22,6 @@ const config = {
   tokenPath: './token.json',
 };
 
-connect(config);
+connect(config).then(async () => {
+  await createDB('david');
+});
