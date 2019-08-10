@@ -37,8 +37,9 @@ const config = {
 
 connect(config).then(async () => {
   try {
-    const db = await getDB('1BvjJ3lrFHDQnGWEhseglZ9ND5zeLhbXz2by_baQn2zE');
-    await db.getFields();
+    const db = await getDB('1mxxohRQ99t4NICYzUpDD3OwwKL4i4lFzwvqSHAhH7eM');
+    const fields = await db.getFields();
+    console.log(fields);
   } catch (err) {
     console.log(err);
   }
