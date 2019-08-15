@@ -39,6 +39,7 @@ connect(config).then(async () => {
   try {
     const db = await getDB('1mxxohRQ99t4NICYzUpDD3OwwKL4i4lFzwvqSHAhH7eM');
     const fields = await db.getFields();
+    await db.addField('Erikk', 'String');
     console.log(fields);
   } catch (err) {
     console.log(err);
