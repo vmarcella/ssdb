@@ -76,9 +76,10 @@ The project is still very barebones, but development is active and looking to im
 -   [SheetDB](#sheetdb)
     -   [Parameters](#parameters-7)
     -   [getFields](#getfields-1)
+        -   [Examples](#examples-3)
     -   [addField](#addfield)
         -   [Parameters](#parameters-8)
-        -   [Examples](#examples-3)
+        -   [Examples](#examples-4)
 -   [info](#info)
     -   [Parameters](#parameters-9)
 
@@ -194,6 +195,20 @@ The sheet database instance used for handling database interactions
 #### getFields
 
 Get what fields are currently being stored inside of the database
+
+##### Examples
+
+```javascript
+// Retrieves the fields within a db
+const currentFields = sheetDBInstance.getFields();
+console.log(currentFields)
+{
+  fieldName: {
+    type: 'String',
+    col: 'A1'
+  }
+}
+```
 
 Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** fields - The fields that are currently stored within the database.
 
