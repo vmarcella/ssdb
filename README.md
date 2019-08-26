@@ -73,11 +73,15 @@ The project is still very barebones, but development is active and looking to im
     -   [Parameters](#parameters-5)
 -   [getFields](#getfields)
     -   [Parameters](#parameters-6)
+-   [getFields](#getfields-1)
 -   [database](#database)
+    -   [addField](#addfield)
+        -   [Parameters](#parameters-7)
+        -   [Examples](#examples-3)
 -   [SheetDB](#sheetdb)
-    -   [Parameters](#parameters-7)
--   [info](#info)
     -   [Parameters](#parameters-8)
+-   [info](#info)
+    -   [Parameters](#parameters-9)
 
 ### connect
 
@@ -179,9 +183,31 @@ Get the fields from a spreadsheet
 
 Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** the field data
 
+### getFields
+
+Get what fields are currently being stored inside of the database
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** fields - The fields that are currently stored within the database.
+
 ### database
 
 The database for handling all sheet or "database" operations
+
+#### addField
+
+Get what fields are currently being stored inside of the database
+
+##### Parameters
+
+-   `fieldName` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of the field to be added.
+-   `type` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The type of the field that is being added.
+
+##### Examples
+
+```javascript
+// Creates a username field of type String within the spreadsheet.
+sheetDBInstance.addField("Username", "String")
+```
 
 ### SheetDB
 
