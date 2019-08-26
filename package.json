@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --init"
+    "lint": "eslint --init",
+    "docs": "documentation readme index.js --section=API"
   },
   "author": "C3NZ",
   "license": "MIT",
@@ -14,6 +15,7 @@
     "googleapis": "^42.0.0"
   },
   "devDependencies": {
+    "documentation": "^12.1.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2"
