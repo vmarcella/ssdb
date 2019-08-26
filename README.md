@@ -201,7 +201,7 @@ Get what fields are currently being stored inside of the database
 ```javascript
 // Retrieves the fields within a db
 const currentFields = sheetDBInstance.getFields();
-console.log(currentFields)
+// currentFields would then look like this if printed:
 {
   fieldName: {
     type: 'String',
