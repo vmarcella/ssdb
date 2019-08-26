@@ -73,6 +73,11 @@ The project is still very barebones, but development is active and looking to im
     -   [Parameters](#parameters-5)
 -   [getFields](#getfields)
     -   [Parameters](#parameters-6)
+-   [database](#database)
+-   [SheetDB](#sheetdb)
+    -   [Parameters](#parameters-7)
+-   [info](#info)
+    -   [Parameters](#parameters-8)
 
 ### connect
 
@@ -88,6 +93,7 @@ generate the token file if it is not present
 #### Examples
 
 ```javascript
+const { connect } = require('ssdb');
 config = {
   credentialsPath: "path/to/credentials",
   tokenPath: "path/to/tokenfile" // Will create if not already there.
@@ -109,8 +115,10 @@ create a database (spreadsheet) from your google account given the name of the s
 #### Examples
 
 ```javascript
+const { createDB } = require('ssdb');
+
 // Returns a new SheetDB instance
-const db = await createDB('sfjklKJhf93Hvkljrf32')
+const db = await createDB('sfjklKJhf93Hvkljrf32');
 ```
 
 ### getDB
@@ -124,6 +132,8 @@ gets a database (spreadsheet) from your google account given the spreadsheet ID.
 #### Examples
 
 ```javascript
+const { getDB } = require('ssdb');
+
 // Returns a new SheetDB instance
 const db = await getDB('sfjklKJhf93Hvkljrf32')
 ```
@@ -168,5 +178,24 @@ Get the fields from a spreadsheet
 -   `sheetID`  
 
 Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** the field data
+
+### database
+
+The database for handling all sheet or "database" operations
+
+### SheetDB
+
+The sheet database instance used for handling database interactions
+
+#### Parameters
+
+-   `sheetID` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The sheetID that this current database is referencing (used for api calls)
+-   `data` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** metadata about the spreadsheet to be stored and kept for reference.
+
+### info
+
+#### Parameters
+
+-   `message`  
 
 ## Resources
