@@ -12,6 +12,7 @@ let setup = false;
  * google services. the fields that are used within the object are credentialsPath,
  * tokenPath, and debug.
  * @example
+ * const { connect } = require('ssdb');
  * config = {
  *   credentialsPath: "path/to/credentials",
  *   tokenPath: "path/to/tokenfile" // Will create if not already there.
@@ -40,8 +41,10 @@ const connect = async (config) => {
  * @desc create a database (spreadsheet) from your google account given the name of the spreadsheet.
  * @param {String} name - The name that you'd like the new database to be named.
  * @example
+ * const { createDB } = require('ssdb');
+ *
  * // Returns a new SheetDB instance
- * const db = await createDB('sfjklKJhf93Hvkljrf32')
+ * const db = await createDB('sfjklKJhf93Hvkljrf32');
  */
 const createDB = async (name) => {
   if (!setup) throw new Error('You need to authenticate with the connect ufnction');
@@ -61,6 +64,8 @@ const createDB = async (name) => {
  * @desc gets a database (spreadsheet) from your google account given the spreadsheet ID.
  * @param {String} sheetID - The ID of the sheet that you're trying to receive.
  * @example
+ * const { getDB } = require('ssdb');
+ *
  * // Returns a new SheetDB instance
  * const db = await getDB('sfjklKJhf93Hvkljrf32')
  */
