@@ -80,8 +80,6 @@ The project is still very barebones, but development is active and looking to im
     -   [addField](#addfield)
         -   [Parameters](#parameters-8)
         -   [Examples](#examples-4)
--   [info](#info)
-    -   [Parameters](#parameters-9)
 
 ### connect
 
@@ -227,11 +225,5 @@ Get what fields are currently being stored inside of the database
 // Creates a username field of type String within the spreadsheet.
 sheetDBInstance.addField("Username", "String")
 ```
-
-### info
-
-#### Parameters
-
--   `message`  
 
 ## Resources
