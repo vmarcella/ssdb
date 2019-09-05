@@ -1,5 +1,5 @@
 const sheetAPI = require('./lib/sheet');
-const SheetDB = require('./lib/database');
+const { SheetDB } = require('./lib/database');
 const log = require('./lib/log');
 
 let setup = false;
@@ -87,11 +87,23 @@ const config = {
   debug: true,
 };
 
+const Schema = require('./lib/schema');
+const Model = require('./lib/model');
+
 connect(config).then(async () => {
   try {
     const db = await getDB('1mxxohRQ99t4NICYzUpDD3OwwKL4i4lFzwvqSHAhH7eM');
     const fields = await db.getFields();
+    const Schema = new Schema({
+      Erik: 'String',
+      David: 'Number',
+      Name: 'Object',
+    });
+
     await db.addField('Erikk', 'String');
+    await db.addItem({
+      ID: 'String',
+    });
     log.info(fields);
   } catch (err) {
     throw new Error(err);
