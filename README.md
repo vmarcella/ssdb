@@ -84,6 +84,8 @@ The project is still very barebones, but development is active and looking to im
         -   [Examples](#examples-4)
     -   [addItem](#additem)
         -   [Parameters](#parameters-10)
+    -   [registerModel](#registermodel)
+        -   [Parameters](#parameters-11)
 
 ### connect
 
@@ -245,5 +247,13 @@ Add an item to the database. Currently only supports one item type
 ##### Parameters
 
 -   `item`  
+
+#### registerModel
+
+Register a new model to the database
+
+##### Parameters
+
+-   `model`  
 
 ## Resources
