@@ -73,13 +73,17 @@ The project is still very barebones, but development is active and looking to im
     -   [Parameters](#parameters-5)
 -   [getFields](#getfields)
     -   [Parameters](#parameters-6)
+-   [getRefreshToken](#getrefreshtoken)
 -   [SheetDB](#sheetdb)
     -   [Parameters](#parameters-7)
     -   [getFields](#getfields-1)
+        -   [Parameters](#parameters-8)
         -   [Examples](#examples-3)
     -   [addField](#addfield)
-        -   [Parameters](#parameters-8)
+        -   [Parameters](#parameters-9)
         -   [Examples](#examples-4)
+    -   [addItem](#additem)
+        -   [Parameters](#parameters-10)
 
 ### connect
 
@@ -178,8 +182,11 @@ Get the fields from a spreadsheet
 #### Parameters
 
 -   `sheetID`  
+-   `field`  
 
 Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** the field data
+
+### getRefreshToken
 
 ### SheetDB
 
@@ -189,10 +196,15 @@ The sheet database instance used for handling database interactions
 
 -   `sheetID` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The sheetID that this current database is referencing (used for api calls)
 -   `data` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** metadata about the spreadsheet to be stored and kept for reference.
+-   `defaultDB`   (optional, default `true`)
 
 #### getFields
 
 Get what fields are currently being stored inside of the database
+
+##### Parameters
+
+-   `field`   (optional, default `''`)
 
 ##### Examples
 
@@ -225,5 +237,13 @@ Get what fields are currently being stored inside of the database
 // Creates a username field of type String within the spreadsheet.
 sheetDBInstance.addField("Username", "String")
 ```
+
+#### addItem
+
+Add an item to the database. Currently only supports one item type
+
+##### Parameters
+
+-   `item`  
 
 ## Resources
